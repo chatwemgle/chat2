@@ -1,0 +1,26 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'chat.css' %}">
+<body>
+<div class="outer">
+    <div class="middle">
+    <div class="inner">
+{% block content %}
+
+<font color="white"; style="background-color: #9AABBB">
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="button_small">Sign up</button><br/><br/>
+      <a href="/login/"><button type="button" class="button_small" >Login</button></a>
+  </form>
+    <br>
+  <p><strong>-- OR --</strong></p>
+
+  <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+    </font>
+{% endblock %}
+        </div>
+    </div>
+</div>
+</body>

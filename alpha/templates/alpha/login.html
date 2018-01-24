@@ -1,0 +1,33 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'chat.css' %}">
+
+
+<body>
+
+<div class="outer">
+    <div class="middle">
+    <div class="inner">
+
+
+                 <form method="post" action=".">
+    {% csrf_token %}
+
+    <input type="text" name="username"/>
+    <input type="password" name="password"/>
+    <br/>
+    <input class="button_small" type="submit" value="Login"/>
+<span>
+            <a href="/signup/"><button type="button" class="button_small" >Register</button></a>
+        </span>
+    </form>
+
+
+    </div>
+    </div>
+</div>
+
+</body>
+
+
+
+
